@@ -3,6 +3,15 @@ const app = express();
 const http = require("http");
 const server = http.createServer(app);
 
+
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5173');  // Allow requests from localhost:5173
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  next();
+});
+
+
 const io = require("socket.io")(server,{transports:["websockets"]});
 
 const PORT = process.env.PORT || 3001;
