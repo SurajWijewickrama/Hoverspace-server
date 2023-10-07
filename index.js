@@ -71,6 +71,11 @@ io.on("connection", (socket) => {
     console.log(reason);
     delete players[socket.id];
   });
+
+  socket.on("removeAll", () => {
+    player={}
+  });
+
 });
 
 setInterval(() => {
