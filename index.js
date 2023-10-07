@@ -10,12 +10,7 @@ app.options('*', cors()) ;
 
 const io = require("socket.io")(server, {
   cors: {
-    origin: "http://localhost:5173/",
-    methods: ["GET", "POST"]
-  },
-  allowRequest: (req, callback) => {
-    const noOriginHeader = req.headers.origin === undefined;
-    callback(null, noOriginHeader);
+    origin: "*",
   }
 });
 
