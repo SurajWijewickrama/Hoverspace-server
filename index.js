@@ -73,7 +73,7 @@ io.on("connection", (socket) => {
   });
 
   socket.on("removeAll", () => {
-    player={}
+    players={}
   });
 
 });
