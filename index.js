@@ -6,6 +6,7 @@ var cors = require('cors')
 
 
 app.use(cors());
+app.options('*', cors()) ;
 
 const io = require("socket.io")(server, {
   cors: {
